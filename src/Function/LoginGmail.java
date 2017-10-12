@@ -38,9 +38,11 @@ public class LoginGmail {
 		identifierId.sendKeys(id);
 	}
 	
-	public void  set_password(String pw) {
+	public void  set_password(String pw) throws InterruptedException {
 		password.clear();
 		password.sendKeys(pw);
+		Thread.sleep(2000);
+		captureSc.captureScreen("Password");
 	}
 	
 	public void click_btnid() {
@@ -89,8 +91,8 @@ public class LoginGmail {
 	private boolean LoginAccount(String[] acc) throws InterruptedException, ClassNotFoundException, SQLException {
 		set_identifierId(acc[0]);
 		click_btnid();
-		captureSc.captureScreen("ID");
 		Thread.sleep(2000);
+		captureSc.captureScreen("ID");
 		if(isValidationMsgNotExist())
 		{
 			set_password(acc[1]);

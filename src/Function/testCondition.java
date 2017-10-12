@@ -31,7 +31,6 @@ public class testCondition {
 		if(lg.checkLoginGmail(accounts))
 		{
 			getSite();
-			getConnect();
 			readExcelInsetToDatabase();
 			writeExcel();
 		}
@@ -83,7 +82,7 @@ public class testCondition {
 		}
 		
 	}
-	private static String Path = "E:\\WORK\\Selenium\\Selenium_Java\\file\\";
+	private static String Path = "./file/excel/";
 	public static String[][] readExcelData(String filename) {
 		String accTmp[][] = new String[5][2];
 		try 
